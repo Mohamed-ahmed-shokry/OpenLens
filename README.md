@@ -41,3 +41,14 @@ OpenLens is a lightweight, cross-platform desktop utility that lets you select a
 | Screen capture | mss + Pillow |
 | OCR | pytesseract (Tesseract) |
 | Package manager | uv |
+
+---
+
+## Platform Support
+
+| Platform | Status |
+|---|---|
+| Windows | Primary target |
+| Linux | Primary target |
+| macOS | Planned later |
+
