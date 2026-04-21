@@ -16,3 +16,16 @@ OpenLens is a lightweight, cross-platform desktop utility that lets you select a
 - **Local LLM** — send text to a local model via Ollama
 - **Image search** — *(planned)*
 - **Offline translation** — *(planned)*
+
+
+---
+
+## Current Status — Phase 1 In Progress
+
+| Step | Status |
+|---|---|
+| Project scaffolding | In progress |
+| Global hotkey listener | Planned |
+| Screen selection overlay | Planned |
+| Region capture | Planned |
+| OCR + floating popup | Planned |
