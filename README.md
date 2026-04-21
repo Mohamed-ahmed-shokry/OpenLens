@@ -29,3 +29,15 @@ OpenLens is a lightweight, cross-platform desktop utility that lets you select a
 | Screen selection overlay | Planned |
 | Region capture | Planned |
 | OCR + floating popup | Planned |
+
+---
+
+## Tech Stack
+
+| Concern | Library |
+|---|---|
+| GUI (overlay + popup) | PyQt6 |
+| Global hotkey + mouse | pynput |
+| Screen capture | mss + Pillow |
+| OCR | pytesseract (Tesseract) |
+| Package manager | uv |
