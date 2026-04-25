@@ -6,7 +6,7 @@ OpenLens is a lightweight, cross-platform desktop utility that lets you select a
 
 ---
 
-## Features (Planned — Building Progressively)
+## Features
 
 - **Screen region capture** — draw a selection over any part of your screen
 - **OCR** — extract text from the captured region instantly
