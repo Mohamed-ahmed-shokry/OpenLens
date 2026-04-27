@@ -8,7 +8,7 @@ Whether you're reading documentation, watching a video, or debugging code, OpenL
 
 ---
 
-## ✨ Why OpenLens?
+## Why OpenLens?
 
 Most tools force you to switch context: copy, paste, open browser tabs, or rely on cloud services.
 
@@ -32,7 +32,7 @@ OpenLens removes that friction:
   Extract text instantly from the selected region
 
 * 💬 **Floating Popup UI**
-  Clean, contextual popup near your selection
+  Clean, contextual pop-up near your selection
 
 * ✂️ **Text Selection**
   Select part of the extracted text for further actions
@@ -116,7 +116,7 @@ python main.py
 
 ## ⌨️ Usage (Planned Flow)
 
-1. Press global hotkey
+1. Press the global hotkey
 2. Select a region on the screen
 3. OCR runs instantly
 4. Popup appears with extracted text
