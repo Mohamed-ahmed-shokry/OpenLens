@@ -1,10 +1,88 @@
-# Python-generated files
+# Python: bytecode, build, and packaging artifacts
 __pycache__/
-*.py[oc]
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.so
+*.egg
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
 build/
 dist/
 wheels/
 *.egg-info
 
 # Virtual environments
-.venv
+.venv/
+venv/
+.env/
+
+# pip log helpers
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PySide6 / Qt build artifacts
+*.qmlc
+*.qmltypes
+*.qrc
+*.spec
+*.pyd
+*.dll
+*.so
+shiboken6/
+pyside6*/
+qt.conf
+qtlogging.ini
+qtwebengine_resources.pak
+qtwebengine_devtools_resources.pak
+qtwebengine_locales/
+qtwebengine_dll_resources.pak
+
+# Operating system files
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Icon?
+# Windows
+Thumbs.db
+desktop.ini
+ehthumbs.db
+# Linux
+.directory
+.Trash-*
+
+# IDE / editor
+.vscode/
+*.code-workspace
+.idea/
+*.sublime-workspace
+*.sublime-project
+.project
+.settings/
+# Editor swap/backup files
+*~
+*.swp
+*.swo
+*.swn
+
+# Tooling / caches
+.uv/
+.mypy_cache/
+.tox/
+pip-wheel-metadata/
+.cache/
+
+# Test / coverage artifacts
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+nosetests.xml
+junit-*.xml
+
+# End of .gitignore (pruned and normalized)
