@@ -84,9 +84,8 @@
 - Keep Linux and Windows as first-class targets because the README lists both as primary targets.
 ## Dependency And Refactor Policy
 - Do not add a library if the standard library or existing dependencies already solve the problem cleanly.
-- If you add a dev tool such as `pytest` or `ruff`, update this file with the exact commands.
 - Favor incremental refactors over large rewrites.
-- Preserve the project's local-first and privacy-sensitive goals in design decisions.
+- Preserve the project's local-first.
 ## Summary For Agents
 - Use `uv`.
 - Assume Python 3.12.
