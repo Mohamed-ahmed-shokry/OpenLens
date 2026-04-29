@@ -78,19 +78,6 @@
 - Add type hints to new functions and methods.
 - Always annotate public APIs.
 - Prefer built-in generics such as `list[str]` and `dict[str, int]` on Python 3.
-## Error Handling Guidelines
-- Do not use bare `except:` blocks.
-- Catch the narrowest exception type that matches the failure mode.
-- Add context when re-raising or logging errors.
-- Fail loudly for programmer errors and invalid assumptions.
-- Handle expected runtime failures such as missing Tesseract, inaccessible displays, or OCR failures gracefully.
-- User-facing failures should eventually be surfaced in the UI, not silently swallowed.
-- Avoid returning magic values when an exception or explicit result object is clearer.
-## Logging And Output
-- Prefer the `logging` module for application diagnostics.
-- Reserve `print()` for temporary smoke checks, CLI output, or the current placeholder entrypoint.
-- Keep log messages actionable and specific.
-- Do not log extracted user text or screenshots casually; this is a privacy-sensitive app.
 ## GUI And Platform Guidelines
 - Push expensive work off the UI thread once the GUI exists.
 - Be careful with global hotkeys and platform APIs; Linux, Windows, and macOS differ.
