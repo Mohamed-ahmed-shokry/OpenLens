@@ -52,22 +52,6 @@
 ### Run The App
 - Preferred command: `uv run python main.py`
 - This command works today and prints `Hello from openlens!`.
-### Test Commands
-- No automated test framework is configured today.
-- `pytest` is not installed in the current environment.
-- `uv run python -m unittest discover` works today and reports `Ran 0 tests`.
-- If you add tests before adding `pytest`, use `uv run python -m unittest discover -s tests -p 'test_*.py'`.
-- Single unittest module: `uv run python -m unittest tests.test_module`
-- Single unittest test case: `uv run python -m unittest tests.test_module.TestClass.test_name`
-- If the repo later adopts `pytest`, use `uv run pytest` for the full suite.
-- Single pytest file: `uv run pytest tests/test_module.py`
-- Single pytest test: `uv run pytest tests/test_module.py::test_name`
-- Single pytest method: `uv run pytest tests/test_module.py::TestClass::test_name`
-### Before Finishing A Change
-- At minimum, run the narrowest relevant command.
-- For tiny Python-only edits, `uv run python -m compileall .` is the current baseline.
-- For behavior changes, also run the app or the narrowest available test target.
-- Be explicit in your summary about which checks were run and which tooling does not exist yet.
 ## Code Organization Guidelines
 - Keep `main.py` thin; use it as an entrypoint, not a dumping ground.
 - Put reusable logic into modules once there is more than trivial behavior.
@@ -93,19 +77,7 @@
 ## Type Guidelines
 - Add type hints to new functions and methods.
 - Always annotate public APIs.
-- Prefer built-in generics such as `list[str]` and `dict[str, int]` on Python 3.12.
-- Use `X | Y` instead of `Optional[X]` or `Union[X, Y]` when practical.
-- Avoid `Any` unless there is a real boundary that cannot be typed cleanly.
-- Use `TypedDict`, `Protocol`, `Enum`, or `dataclass` only when they simplify the model.
-- Do not create elaborate type hierarchies for a tiny feature.
-## Naming Guidelines
-- Use `snake_case` for functions, variables, and module names.
-- Use `PascalCase` for classes.
-- Use `UPPER_SNAKE_CASE` for module-level constants.
-- Prefer descriptive names over short abbreviations.
-- Boolean names should read clearly, for example `is_ready`, `has_text`, or `can_capture`.
-- Event handlers should read clearly, for example `handle_capture_start` or `on_hotkey_pressed`.
-- Avoid vague names such as `data`, `obj`, `temp`, or `misc` unless the scope is tiny.
+- Prefer built-in generics such as `list[str]` and `dict[str, int]` on Python 3.
 ## Error Handling Guidelines
 - Do not use bare `except:` blocks.
 - Catch the narrowest exception type that matches the failure mode.
@@ -120,17 +92,9 @@
 - Keep log messages actionable and specific.
 - Do not log extracted user text or screenshots casually; this is a privacy-sensitive app.
 ## GUI And Platform Guidelines
-- Do not block the Qt event loop with OCR or long-running capture work.
 - Push expensive work off the UI thread once the GUI exists.
 - Be careful with global hotkeys and platform APIs; Linux, Windows, and macOS differ.
-- Prefer `pathlib.Path` over raw string path manipulation.
 - Keep Linux and Windows as first-class targets because the README lists both as primary targets.
-## Testing Guidance
-- Prefer testing pure OCR post-processing, parsing, and action-selection logic separately from GUI code.
-- Keep tests deterministic and local.
-- Mock screen capture, OCR, and OS hooks instead of depending on a real desktop session.
-- For GUI behavior, isolate logic from widgets where possible so most tests stay headless.
-- Add regression tests for bugs before or alongside the fix when practical.
 ## Dependency And Refactor Policy
 - Do not add a library if the standard library or existing dependencies already solve the problem cleanly.
 - If you add a dev tool such as `pytest` or `ruff`, update this file with the exact commands.
@@ -139,6 +103,5 @@
 ## Summary For Agents
 - Use `uv`.
 - Assume Python 3.12.
-- Do not invent missing tooling.
 - Keep changes small, explicit, and explained.
 - Ask before making assumptions or replacing working behavior.
