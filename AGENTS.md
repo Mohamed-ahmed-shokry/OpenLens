@@ -1,0 +1,154 @@
+# AGENTS.md
+## Purpose
+- This file is for coding agents working in `/home/mohamed/oss-work/OpenLens`.
+- It reflects the repository as it exists today, not an imagined future layout.
+- Current codebase size is very small: `main.py`, `pyproject.toml`, `README.md`, `uv.lock`, and repo metadata.
+- The project is a Python 3.12 desktop OCR app scaffold intended to become a local-first Google Lens alternative.
+## Rule Files Present
+- No existing `AGENTS.md` was present when this file was created.
+- No `.cursorrules` file was found.
+- No files were found under `.cursor/rules/`.
+- No `.github/copilot-instructions.md` file was found.
+- Because no Cursor or Copilot rule files exist, the rules below are the authoritative agent instructions in-repo.
+## Mandatory Workflow Rules
+### 1. Think First, Code Later
+- Before writing code, explain what you are about to do, why that approach fits, and what alternatives exist.
+- Do not jump straight to implementation.
+- Start with a short brainstorming message.
+- Wait for explicit approval such as `go ahead` or `implement it` before writing code.
+### 2. Small Steps Only
+- Break features into the smallest logical, testable unit.
+- One step should correspond to one focused change.
+- Do not bundle multiple unrelated features into one edit.
+- If a change feels large, split it and ask which part to start with.
+### 3. Always Explain Every Change
+- For every file or function you add, explain what it does and why it exists.
+- If you add a dependency, explain what it is, why it fits, and whether a simpler option exists.
+- Prefer short inline comments that explain why a non-obvious block exists.
+### 4. Ask Before Assuming
+- If behavior, UI, shortcuts, library choice, or architecture is unclear, ask.
+- If you must choose a default, say what default you picked and why.
+### 5. Never Delete or Overwrite Silently
+- If you need to replace working code, show the before/after intent and explain the reason.
+- Ask for approval before replacing behavior that already works.
+### 6. No Premature Optimization
+- Start with the simplest working version.
+- Avoid early abstractions, config sprawl, and speculative error handling.
+- Refactoring and polish belong in later steps, not mixed into the first working change.
+## Repository Facts
+- Python version is pinned by `.python-version` to `3.12`.
+- Dependencies are managed with `uv`, not `pipenv`, `poetry`, `npm`, or `make`.
+- Runtime dependencies in `pyproject.toml` are `mss`, `pillow`, `pynput`, `pyside6`, and `pytesseract`.
+- Treat `pyside6` as the source of truth for Qt work even though the README tech-stack table still says `PyQt6`.
+- The current entrypoint is `main.py`.
+- The current app is still a scaffold; `main.py` only prints a greeting.
+- `README.md` describes a future PySide6 GUI overlay, OCR pipeline, and local-first workflows.
+- Tesseract is an external system dependency expected by the README.
+- There is no package directory yet such as `openlens/`; if the app grows, move logic out of `main.py` into modules deliberately.
+## Commands
+### Environment Setup
+- Install dependencies with `uv sync`.
+- If Tesseract is missing on Linux, follow the README: `sudo apt install tesseract-ocr python3-dev build-essential`.
+### Run The App
+- Preferred command: `uv run python main.py`
+- This command works today and prints `Hello from openlens!`.
+### Build Commands
+- There is no dedicated build command configured in this repo yet.
+- Do not invent `make build`, `npm run build`, or `uv build` instructions unless the repo is updated to support them.
+- The closest current sanity check is `uv run python -m compileall main.py`.
+- If more Python packages or modules are added, broaden this to `uv run python -m compileall .`.
+### Lint And Format Commands
+- No linter or formatter is configured in `pyproject.toml` today.
+- Do not claim that `ruff`, `black`, `isort`, `flake8`, or `mypy` are available unless they are added first.
+- For now, use `uv run python -m compileall .` as the lowest-risk validation step.
+- If the project later adopts Ruff, prefer `uv run ruff check .` and `uv run ruff format .`.
+### Test Commands
+- No automated test framework is configured today.
+- `pytest` is not installed in the current environment.
+- `uv run python -m unittest discover` works today and reports `Ran 0 tests`.
+- If you add tests before adding `pytest`, use `uv run python -m unittest discover -s tests -p 'test_*.py'`.
+- Single unittest module: `uv run python -m unittest tests.test_module`
+- Single unittest test case: `uv run python -m unittest tests.test_module.TestClass.test_name`
+- If the repo later adopts `pytest`, use `uv run pytest` for the full suite.
+- Single pytest file: `uv run pytest tests/test_module.py`
+- Single pytest test: `uv run pytest tests/test_module.py::test_name`
+- Single pytest method: `uv run pytest tests/test_module.py::TestClass::test_name`
+### Before Finishing A Change
+- At minimum, run the narrowest relevant command.
+- For tiny Python-only edits, `uv run python -m compileall .` is the current baseline.
+- For behavior changes, also run the app or the narrowest available test target.
+- Be explicit in your summary about which checks were run and which tooling does not exist yet.
+## Code Organization Guidelines
+- Keep `main.py` thin; use it as an entrypoint, not a dumping ground.
+- Put reusable logic into modules once there is more than trivial behavior.
+- Separate UI, capture, OCR, and action logic into distinct modules when they appear.
+- Keep side-effect-heavy code near boundaries and pure logic in testable functions.
+- Prefer standard library modules before adding dependencies.
+## Import Guidelines
+- Group imports in this order: standard library, third-party packages, then local modules.
+- Separate groups with one blank line.
+- Import only what you use.
+- Remove dead imports promptly.
+- Prefer explicit imports over wildcard imports.
+- If an import is optional or platform-specific, isolate it and document why.
+- Avoid import-time side effects, especially UI startup, global hotkeys, or OCR initialization.
+## Formatting Guidelines
+- Follow normal Python style and keep code Black-compatible even though Black is not configured.
+- Prefer 88-character-ish lines unless readability clearly improves with a slightly longer one.
+- Use 4 spaces for indentation.
+- Use trailing commas where they reduce diff noise in multiline literals and call sites.
+- Prefer single responsibility per function.
+- Keep comments short and focused on why, not what.
+- Do not add banner comments or decorative separators.
+## Type Guidelines
+- Add type hints to new functions and methods.
+- Always annotate public APIs.
+- Prefer built-in generics such as `list[str]` and `dict[str, int]` on Python 3.12.
+- Use `X | Y` instead of `Optional[X]` or `Union[X, Y]` when practical.
+- Avoid `Any` unless there is a real boundary that cannot be typed cleanly.
+- Use `TypedDict`, `Protocol`, `Enum`, or `dataclass` only when they simplify the model.
+- Do not create elaborate type hierarchies for a tiny feature.
+## Naming Guidelines
+- Use `snake_case` for functions, variables, and module names.
+- Use `PascalCase` for classes.
+- Use `UPPER_SNAKE_CASE` for module-level constants.
+- Prefer descriptive names over short abbreviations.
+- Boolean names should read clearly, for example `is_ready`, `has_text`, or `can_capture`.
+- Event handlers should read clearly, for example `handle_capture_start` or `on_hotkey_pressed`.
+- Avoid vague names such as `data`, `obj`, `temp`, or `misc` unless the scope is tiny.
+## Error Handling Guidelines
+- Do not use bare `except:` blocks.
+- Catch the narrowest exception type that matches the failure mode.
+- Add context when re-raising or logging errors.
+- Fail loudly for programmer errors and invalid assumptions.
+- Handle expected runtime failures such as missing Tesseract, inaccessible displays, or OCR failures gracefully.
+- User-facing failures should eventually be surfaced in the UI, not silently swallowed.
+- Avoid returning magic values when an exception or explicit result object is clearer.
+## Logging And Output
+- Prefer the `logging` module for application diagnostics.
+- Reserve `print()` for temporary smoke checks, CLI output, or the current placeholder entrypoint.
+- Keep log messages actionable and specific.
+- Do not log extracted user text or screenshots casually; this is a privacy-sensitive app.
+## GUI And Platform Guidelines
+- Do not block the Qt event loop with OCR or long-running capture work.
+- Push expensive work off the UI thread once the GUI exists.
+- Be careful with global hotkeys and platform APIs; Linux, Windows, and macOS differ.
+- Prefer `pathlib.Path` over raw string path manipulation.
+- Keep Linux and Windows as first-class targets because the README lists both as primary targets.
+## Testing Guidance
+- Prefer testing pure OCR post-processing, parsing, and action-selection logic separately from GUI code.
+- Keep tests deterministic and local.
+- Mock screen capture, OCR, and OS hooks instead of depending on a real desktop session.
+- For GUI behavior, isolate logic from widgets where possible so most tests stay headless.
+- Add regression tests for bugs before or alongside the fix when practical.
+## Dependency And Refactor Policy
+- Do not add a library if the standard library or existing dependencies already solve the problem cleanly.
+- If you add a dev tool such as `pytest` or `ruff`, update this file with the exact commands.
+- Favor incremental refactors over large rewrites.
+- Preserve the project's local-first and privacy-sensitive goals in design decisions.
+## Summary For Agents
+- Use `uv`.
+- Assume Python 3.12.
+- Do not invent missing tooling.
+- Keep changes small, explicit, and explained.
+- Ask before making assumptions or replacing working behavior.
