@@ -52,6 +52,13 @@
 ### Run The App
 - Preferred command: `uv run python main.py`
 - This command works today and prints `Hello from openlens!`.
+## Commit Message Guidelines
+- Use Conventional Commits in this short format: `<type>[optional scope]: <description>`.
+- Use `feat:` for new features and `fix:` for bug fixes.
+- Use `docs:`, `test:`, `refactor:`, `style:`, `chore:`, `build:`, or `ci:` when they fit.
+- Add a scope when it clarifies the area, such as `feat(ocr): add text extraction`.
+- Mark breaking changes with `!` before the colon or a `BREAKING CHANGE:` footer.
+- Examples: `docs: add commit guidelines`, `fix(ocr): handle empty output`, `feat(ui): add capture overlay`.
 ## Code Organization Guidelines
 - Keep `main.py` thin; use it as an entrypoint, not a dumping ground.
 - Put reusable logic into modules once there is more than trivial behavior.
