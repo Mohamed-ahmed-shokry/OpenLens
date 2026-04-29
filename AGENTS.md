@@ -52,16 +52,6 @@
 ### Run The App
 - Preferred command: `uv run python main.py`
 - This command works today and prints `Hello from openlens!`.
-### Build Commands
-- There is no dedicated build command configured in this repo yet.
-- Do not invent `make build`, `npm run build`, or `uv build` instructions unless the repo is updated to support them.
-- The closest current sanity check is `uv run python -m compileall main.py`.
-- If more Python packages or modules are added, broaden this to `uv run python -m compileall .`.
-### Lint And Format Commands
-- No linter or formatter is configured in `pyproject.toml` today.
-- Do not claim that `ruff`, `black`, `isort`, `flake8`, or `mypy` are available unless they are added first.
-- For now, use `uv run python -m compileall .` as the lowest-risk validation step.
-- If the project later adopts Ruff, prefer `uv run ruff check .` and `uv run ruff format .`.
 ### Test Commands
 - No automated test framework is configured today.
 - `pytest` is not installed in the current environment.
