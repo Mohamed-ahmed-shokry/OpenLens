@@ -85,4 +85,6 @@ htmlcov/
 nosetests.xml
 junit-*.xml
 
-# End of .gitignore (pruned and normalized)
+# Agent
+agent.log
+.codex
