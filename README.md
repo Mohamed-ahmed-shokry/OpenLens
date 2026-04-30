@@ -75,7 +75,7 @@ User Actions (Translate / Search / LLM)
 
 | Layer                 | Technology              |
 | --------------------- | ----------------------- |
-| GUI (Overlay + Popup) | PyQt6                   |
+| GUI (Overlay + Popup) | PySide6                 |
 | Input Handling        | pynput                  |
 | Screen Capture        | mss + Pillow            |
 | OCR                   | Tesseract (pytesseract) |

@@ -39,7 +39,7 @@
 - Python version is pinned by `.python-version` to `3.12`.
 - Dependencies are managed with `uv`, not `pipenv`, `poetry`, `npm`, or `make`.
 - Runtime dependencies in `pyproject.toml` are `mss`, `pillow`, `pynput`, `pyside6`, and `pytesseract`.
-- Treat `pyside6` as the source of truth for Qt work even though the README tech-stack table still says `PyQt6`.
+- Use PySide6 imports and patterns for all Qt work.
 - The current entrypoint is `main.py`.
 - The current app is still a scaffold; `main.py` only prints a greeting.
 - `README.md` describes a future PySide6 GUI overlay, OCR pipeline, and local-first workflows.
