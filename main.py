@@ -2,6 +2,8 @@ import sys
 
 from PySide6.QtWidgets import QApplication, QWidget
 
+from openlens.hotkey import GlobalHotkeyListener
+
 
 def main() -> int:
     app = QApplication(sys.argv)
@@ -10,6 +12,10 @@ def main() -> int:
     window.setWindowTitle("OpenLens")
     window.resize(480, 320)
     window.show()
+
+    listener = GlobalHotkeyListener(lambda: print("Capture hotkey pressed"))
+    listener.start()
+    app.aboutToQuit.connect(listener.stop)
 
     return app.exec()
 
