@@ -1,0 +1,1 @@
+"""Floating result popup boundary."""
