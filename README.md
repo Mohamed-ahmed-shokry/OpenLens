@@ -114,7 +114,7 @@ python main.py
 
 ---
 
-## ⌨️ Usage (Planned Flow)
+## Usage (Planned Flow)
 
 1. Press the global hotkey
 2. Select a region on the screen
@@ -128,7 +128,7 @@ python main.py
 
 ---
 
-## 📊 Project Status
+## Project Status
 
 **Phase 1: Core Interaction Loop**
 
