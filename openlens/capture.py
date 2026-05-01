@@ -1,0 +1,1 @@
+"""Screen region capture boundary."""
