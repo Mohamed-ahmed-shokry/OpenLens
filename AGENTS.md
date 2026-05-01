@@ -39,7 +39,6 @@
 - Commit each logical, testable part separately.
 - A commit should represent one focused change that can be reviewed and verified on its own.
 - Do not bundle unrelated edits into the same commit.
-- If the user asks for separate commits per file, commit each requested file independently.
 ## Repository Facts
 - Python version is pinned by `.python-version` to `3.12`.
 - Dependencies are managed with `uv`, not `pipenv`, `poetry`, `npm`, or `make`.
