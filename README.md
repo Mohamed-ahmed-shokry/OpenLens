@@ -14,64 +14,64 @@ Most tools force you to switch context: copy, paste, open browser tabs, or rely 
 
 OpenLens removes that friction:
 
-* ⚡ Instant OCR directly from your screen
-* 🔒 Local-first design (your data stays on your machine)
-* 🧠 Built-in LLM workflows (via Ollama)
-* 🎯 Minimal, fast, distraction-free UI
+* Instant OCR directly from your screen
+* Local-first design (your data stays on your machine)
+* Built-in LLM workflows (via Ollama)
+* Minimal, fast, distraction-free UI
 
 ---
 
-## 🚀 Features
+## Features
 
 ### Core Capabilities
 
-* 🖱 **Screen Region Capture**
+* **Screen Region Capture**
   Draw a selection over any part of your screen
 
-* 🔎 **Fast OCR**
+* **Fast OCR**
   Extract text instantly from the selected region
 
-* 💬 **Floating Popup UI**
+* **Floating Popup UI**
   Clean, contextual pop-up near your selection
 
-* ✂️ **Text Selection**
+* **Text Selection**
   Select part of the extracted text for further actions
 
 ### Actions on Extracted Text
 
-* 🌐 **Translate** (Google Translate)
-* 🔍 **Search** (Google / DuckDuckGo)
-* 🧠 **Send to Local LLM** (via Ollama)
+* **Translate** (Google Translate)
+* **Search** (Google / DuckDuckGo)
+* **Send to Local LLM** (via Ollama)
 
 ### Planned
 
-* 🖼 Image search
-* 🌍 Offline translation
-* 🔌 Plugin system for custom actions
+* Image search
+* Offline translation
+* Plugin system for custom actions
 
 These align with the core capabilities roadmap 
 
 ---
 
-## 🧱 Architecture Overview
+## Architecture Overview
 
 ```
 User Input (Hotkey)
-        ↓
+        |
 Screen Selection Overlay
-        ↓
+        |
 Region Capture (mss)
-        ↓
+        |
 OCR Engine (Tesseract)
-        ↓
+        |
 Floating Popup UI
-        ↓
+        |
 User Actions (Translate / Search / LLM)
 ```
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer                 | Technology              |
 | --------------------- | ----------------------- |
@@ -84,7 +84,7 @@ User Actions (Translate / Search / LLM)
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### 1. Install system dependencies
 
@@ -134,25 +134,25 @@ python main.py
 
 | Component           | Status         |
 | ------------------- | -------------- |
-| Project scaffolding | 🟡 In progress |
-| Global hotkey       | ⚪ Planned      |
-| Selection overlay   | ⚪ Planned      |
-| Region capture      | ⚪ Planned      |
-| OCR + popup         | ⚪ Planned      |
+| Project scaffolding | In progress |
+| Global hotkey       | Planned     |
+| Selection overlay   | Planned     |
+| Region capture      | Planned     |
+| OCR + popup         | Planned     |
 
 ---
 
-## 🖥 Platform Support
+## Platform Support
 
 | Platform | Status           |
 | -------- | ---------------- |
-| Windows  | ✅ Primary target |
-| Linux    | ✅ Primary target |
-| macOS    | ⏳ Planned        |
+| Windows  | Primary target |
+| Linux    | Primary target |
+| macOS    | Planned        |
 
 ---
 
-## ⚠️ Known Challenges
+## Known Challenges
 
 * Wayland global hotkeys (Linux)
 * OCR accuracy vs speed tradeoffs
@@ -161,7 +161,7 @@ python main.py
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome. If you want to help:
 
@@ -172,7 +172,7 @@ Contributions are welcome. If you want to help:
 
 ---
 
-## 📌 Roadmap
+## Roadmap
 
 * Phase 1: Core capture → OCR → popup
 * Phase 2: Actions (translate, search, LLM)
@@ -181,7 +181,7 @@ Contributions are welcome. If you want to help:
 
 ---
 
-## 📜 License
+## License
 
 MIT License
 
