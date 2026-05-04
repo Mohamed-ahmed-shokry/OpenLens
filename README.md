@@ -1,6 +1,6 @@
 # OpenLens
 
-> A local-first alternative to Google Lens for your desktop.
+> A local-first alternative to Google Lens.
 
 OpenLens lets you capture any region of your screen, extract text instantly, and take action on it — all without leaving your workflow.
 
