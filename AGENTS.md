@@ -24,7 +24,6 @@
 ### 3. Always Explain Every Change
 - For every file or function you add, explain what it does and why it exists.
 - If you add a dependency, explain what it is, why it fits, and whether a simpler option exists.
-- Prefer short inline comments that explain why a non-obvious block exists.
 ### 4. Ask Before Assuming
 - If behavior, UI, shortcuts, library choice, or architecture is unclear, ask.
 - If you must choose a default, say what default you picked and why.
@@ -54,7 +53,7 @@
 - Install dependencies with `uv sync`.
 - If Tesseract is missing on Linux, follow the README: `sudo apt install tesseract-ocr python3-dev build-essential`.
 ### Run The App
-- Preferred command: `uv run python main.py`
+- Preferred command: `uv run main.py`
 - This command works today and prints `Hello from openlens!`.
 ## Commit Message Guidelines
 - Use Conventional Commits in this short format: `<type>[optional scope]: <description>`.
@@ -84,7 +83,6 @@
 - Use trailing commas where they reduce diff noise in multiline literals and call sites.
 - Prefer single responsibility per function.
 - Keep comments short and focused on why, not what.
-- Do not add banner comments or decorative separators.
 ## Type Guidelines
 - Add type hints to new functions and methods.
 - Always annotate public APIs.
