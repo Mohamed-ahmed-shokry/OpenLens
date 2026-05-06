@@ -146,7 +146,7 @@ python main.py
 
 | Platform | Status           |
 | -------- | ---------------- |
-| Windows  | Primary target |
+| Windows  | planned |
 | Linux    | Primary target |
 | macOS    | Planned        |
 
