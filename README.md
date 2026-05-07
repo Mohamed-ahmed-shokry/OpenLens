@@ -179,9 +179,4 @@ Contributions are welcome. If you want to help:
 * Phase 3: Plugin system + offline capabilities
 * Phase 4: Advanced features (image search, context awareness)
 
----
-
-## License
-
-MIT License
 
