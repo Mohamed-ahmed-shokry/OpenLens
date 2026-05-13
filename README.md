@@ -158,18 +158,7 @@ python main.py
 * OCR accuracy vs speed tradeoffs
 * Cross-platform input handling
 * UI responsiveness during OCR
-
----
-
-## Contributing
-
-Contributions are welcome. If you want to help:
-
-* Improve OCR pipeline performance
-* Add new actions (plugins)
-* Enhance UI/UX
-* Fix cross-platform issues
-
+
 ---
 
 ## Roadmap
