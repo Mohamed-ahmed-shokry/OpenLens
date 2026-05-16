@@ -121,7 +121,6 @@ python main.py
 3. OCR runs instantly
 4. Popup appears with extracted text
 5. Choose an action:
-
    * Translate
    * Search
    * Send to LLM
@@ -158,7 +157,7 @@ python main.py
 * OCR accuracy vs speed tradeoffs
 * Cross-platform input handling
 * UI responsiveness during OCR
-
+
 ---
 
 ## Roadmap
