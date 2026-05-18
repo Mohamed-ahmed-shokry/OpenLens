@@ -30,10 +30,6 @@
 ### 5. Never Delete or Overwrite Silently
 - If you need to replace working code, show the before/after intent and explain the reason.
 - Ask for approval before replacing behavior that already works.
-### 6. No Premature Optimization
-- Start with the simplest working version.
-- Avoid early abstractions, config sprawl, and speculative error handling.
-- Refactoring and polish belong in later steps, not mixed into the first working change.
 ## Smallest-Part Commit Workflow
 - Commit each logical, testable part separately.
 - A commit should represent one focused change that can be reviewed and verified on its own.
