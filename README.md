@@ -153,7 +153,7 @@ python main.py
 
 ## Known Challenges
 
-* Wayland global hotkeys (Linux)
+* Wayland global hotkeys 
 * OCR accuracy vs speed tradeoffs
 * Cross-platform input handling
 * UI responsiveness during OCR
